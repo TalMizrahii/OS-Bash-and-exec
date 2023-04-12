@@ -2,9 +2,25 @@
 
 ## Part 1 - Bash
 ### About
-The script gccfind.sh receives a folder path and a word as arguments.  
-First, the script deletes all the compiled files from the folder. Afterwards, reads and compiles all c files from the folder containing the word that passed as argument.  
-Possible flag is -r. If it is added, the command should also  work recursively on all sub-folders.  
+This script named "gccfind.sh" is used to compile all the C files in a directory (and its subdirectories if the recursion flag is on) that contain a specific word or pattern. It can be executed in a terminal by providing three parameters: the path to the directory, the word to search for, and a flag indicating whether or not to search recursively.
+
+### Implementation
+
+The script is written in Bash and can be run on any Unix-based operating system. It first checks if enough parameters are provided and exits if not. If the path to the directory is a full path, it will use it, otherwise, it will concatenate the current path to it. Then, it deletes all files with the ".out" extension in the directory. After that, it enters the directory and checks if there are any C files in it. If so, it goes over them and checks if the word or pattern appears in them. If there is a match, it compiles the file using gcc and saves it with the same name but with ".out" suffix. If the recursion flag is on, it will check if there are any more folders in the directory and will call itself for each one of them.
+
+### Execution
+To execute this script, open a terminal window and navigate to the directory where the script is located. Then, type in the command
+
+```bash
+./gccfind.sh [path_to_directory] [word_to_search] [-r]
+```
+where the path_to_directory is the directory you want to search in, the word_to_search is the word or pattern you want to find, and the "-r" flag indicates whether to search recursively or not.
+
+I put an example command and a test folder for the script
+
+```bash
+ ./gccfind.sh testfolder word -r
+```
 
 ## Part 2 - Bash: Tennis
 
