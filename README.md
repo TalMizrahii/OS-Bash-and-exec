@@ -68,7 +68,8 @@ Here is an example of how to compile and run the program on Linux:
 ```bash
 # Compile
 $ gcc -o shell myshell.c
-
+```
+```bash
 # Run
 $ ./shell
 ```
