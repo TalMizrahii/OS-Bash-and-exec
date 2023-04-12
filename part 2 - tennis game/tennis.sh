@@ -1,5 +1,4 @@
 #!/bin/bash
-#Tal Mizrahi 206960890
 
 # Declaring the initiated values of the players score.
 player1=50
