@@ -1,6 +1,6 @@
 # The first 3-part assignment for Operating Systems course, Bar Ilan university.
 
-## Part 1 - Bash: gccfind
+## Part 1 - Bash: gcc-find
 ### About
 This script named "gccfind.sh" is used to compile all the C files in a directory (and its subdirectories if the recursion flag is on) that contain a specific word or pattern. It can be executed in a terminal by providing three parameters: the path to the directory, the word to search for, and a flag indicating whether or not to search recursively.
 
@@ -20,6 +20,28 @@ I put an example command and a test folder for the script
 
 ```bash
 $ ./gccfind.sh testfolder word -r
+```
+## Part 2 - Bash: Tennis game
+### About
+The code is a shell script that simulates a board game with two players. Each player has an initial score of 50 points. The game is played in rounds, and in each round, the players enter a number between 0 and their remaining score. The player with the higher number wins the round, and their score is deducted by the amount they chose. The player who first reaches a score of 0 loses the game. The board is displayed to the screen after each round, showing the players' scores and the position of a token that moves left or right depending on the outcome of the round.
+
+![TennisBoard](https://user-images.githubusercontent.com/92651125/187092788-ba91ed10-3f83-4096-abcf-27a88c23179a.png) 
+
+### Implementation
+The code contains several functions, each responsible for a different task. Here's a brief explanation of each function:
+
+ * board() - This function displays the game board to the screen. It consists of an upper and lower part, and the position of the token is displayed based on the value of the $position variable.
+ * playerPick() - This function asks each player to enter their choice of a number between 0 and their remaining score. It checks the validity of the input and deducts the choice from the player's score.
+ * setScore() - This function sets the position of the token based on the result of the round. If player 1 wins, the token moves to the right, and if player 2 wins, the token moves to the left.
+ * presentPicks() - This function displays the choices made by each player in the current round.
+ * goldenTicket() - This function checks if any player has won the game by reaching a score of 0 or moving the token to the far right or left of the board.
+
+### Execution
+
+To run the script, simply execute it in a Bash shell. The script requires no arguments or input from the user. The game will continue until one of the players loses, and the winner will be displayed to the screen.
+
+```bash
+$ ./tennis.sh
 ```
 
 ## Part 3 - Mini Shell
