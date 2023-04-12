@@ -1,5 +1,4 @@
 #!/bin/bash
-#Tal Mizrahi 206960890
 
 # Check for the amount of parameters.
 if [ "$#" -lt 3 ]; then
