@@ -1,6 +1,6 @@
 # The first 3-part assignment for Operating Systems course, Bar Ilan university.
 
-## Part 1 - Bash
+## Part 1 - Bash: gccfind
 ### About
 This script named "gccfind.sh" is used to compile all the C files in a directory (and its subdirectories if the recursion flag is on) that contain a specific word or pattern. It can be executed in a terminal by providing three parameters: the path to the directory, the word to search for, and a flag indicating whether or not to search recursively.
 
@@ -12,28 +12,41 @@ The script is written in Bash and can be run on any Unix-based operating system.
 To execute this script, open a terminal window and navigate to the directory where the script is located. Then, type in the command
 
 ```bash
-./gccfind.sh [path_to_directory] [word_to_search] [-r]
+$ ./gccfind.sh [path_to_directory] [word_to_search] [-r]
 ```
 where the path_to_directory is the directory you want to search in, the word_to_search is the word or pattern you want to find, and the "-r" flag indicates whether to search recursively or not.
 
 I put an example command and a test folder for the script
 
 ```bash
- ./gccfind.sh testfolder word -r
+$ ./gccfind.sh testfolder word -r
 ```
 
-## Part 2 - Bash: Tennis
+## Part 3 - Mini Shell
+### About
+This code is a simple shell that allows the user to execute basic commands, including built-in commands like "cd" and "history". The program uses fork() to create a new process to run the command and waits for the process to complete using waitpid(). The history of executed commands and their process IDs are stored in an array of structs.
 
-The game board (the tennis court) is divided into 4 areas, 2 out lines, a seperation middle line  and a ball marked O.  
-![TennisBoard](https://user-images.githubusercontent.com/92651125/187092788-ba91ed10-3f83-4096-abcf-27a88c23179a.png)  
-At the beginning of the game, the ball starts on the middle line and each player starts with 50 points.  
-Now in each turn both players choose a number (between 0 and the number of the current number of points they have) and reveal it together. Now the player with the lowest number "loses" the round and the ball moves towards him. Then the number that each player chose is subtracted from his points.  
-If the ball is in one of the out lines, so the player whose ball is not on his side wins. If one of the players reached 0 points and the other player still has points then the player with the points won. If both players reached 0 together then the player with the ball in his zone is lost, and if the ball is still in the middle line it is a draw.
+### Implementation
+The program is implemented in C and consists of several functions:
 
-## Part 3 - Minimal Shell
+addCommand() - Adds the last executed command to the history of commands.
+ * displayHistory() - Displays the history of executed commands.
+ * shellCommand() - Executes the command entered by the user.
+ * getUserInput() - Gets user input from the command line.
+ * splitCommandAndArgs() - Splits the command and arguments entered by the user.
+ * specialCommands() - Executes the built-in commands like "cd" and "history".
+ * main() - The main function of the program that runs the main loop of commands.
+ 
+### Execution
 
-In this part we will write a C program that will implement shell. The program will display a marker  (prompt) on the screen and allow the user to type commands in Linux (for example ls, cat, sleep).  
-After pressing ENTER, the typed command will be executed, **in a separate process** (in the foreground, with fork and exec).  
-Also, the shell will be able to receive any number of arguments where each argument (if any) will contain a full path to a folder that will be added to the environment variables.  
-We will also implement 3 built-in commands by ourselves: exit, cd, history.  
-When "exit" is typed, the shell will finish and exit.
+To run the program, simply compile the code using a C compiler and execute the resulting executable. The program will run in the command line and prompt the user for input. To exit the program, enter "exit" in the command line.
+
+Here is an example of how to compile and run the program on Linux:
+
+```bash
+# Compile
+$ gcc -o shell myshell.c
+
+# Run
+$ ./shell
+```
