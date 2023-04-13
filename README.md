@@ -5,14 +5,6 @@
 
 <h4 align="center">The first 3-part assignment for Operating Systems course, Bar Ilan university.
 
-
-<p align="center">
-  <a href="## Part 1 - Bash: gcc-find"> Part 1 </a> •
-  <a href="## Part 2 - Bash: Tennis game"> Part 2 </a> •
-  <a href="## Part 3 - Mini Shell"> Part 3 </a> •
-  <a href="#author">Author</a> 
-</p>
-
 ## Part 1 - Bash: gcc-find
 ### About
 This script named "gccfind.sh" is used to compile all the C files in a directory (and its subdirectories if the recursion flag is on) that contain a specific word or pattern. It can be executed in a terminal by providing three parameters: the path to the directory, the word to search for, and a flag indicating whether or not to search recursively.
