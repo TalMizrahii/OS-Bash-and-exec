@@ -1,4 +1,17 @@
-# The first 3-part assignment for Operating Systems course, Bar Ilan university.
+<h1 align="center">
+  Operating Systems
+  <br>
+</h1>
+
+<h4 align="center">The first 3-part assignment for Operating Systems course, Bar Ilan university.
+
+
+<p align="center">
+  <a href="## Part 1 - Bash: gcc-find"> Part 1 </a> •
+  <a href="## Part 2 - Bash: Tennis game"> Part 2 </a> •
+  <a href="## Part 3 - Mini Shell"> Part 3 </a> •
+  <a href="#author">Author</a> 
+</p>
 
 ## Part 1 - Bash: gcc-find
 ### About
@@ -73,3 +86,7 @@ $ gcc -o shell myshell.c
 # Run
 $ ./shell
 ```
+
+## Author
+* [@Tal Mizrahi](https://github.com/TalMizrahii)
+
