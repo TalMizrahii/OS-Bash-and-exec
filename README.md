@@ -53,6 +53,9 @@ $ ./tennis.sh
 ### About
 This code is a simple shell that allows the user to execute basic commands, including built-in commands like "cd" and "history". The program uses fork() to create a new process to run the command and waits for the process to complete using waitpid(). The history of executed commands and their process IDs are stored in an array of structs.
 
+The shell can accept any number of arguments, where each argument (if any) will contain a full path to a folder,
+and when the program runs, any command that enters can run if it is a command that is already known from the folder.
+
 ### Implementation
 The program is implemented in C and consists of several functions:
 
