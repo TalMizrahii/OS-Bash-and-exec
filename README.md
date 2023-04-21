@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/2560px-Gnu-bash-logo.svg.png" alt="HTML" width="200"></a>
+  <a href="![image](https://user-images.githubusercontent.com/103560553/233603205-af805123-f152-4950-bbd6-8d77bbdc8569.png)" alt="HTML" width="200"></a>
   <br>
   Operating Systems
   <br>
