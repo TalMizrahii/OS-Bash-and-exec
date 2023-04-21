@@ -1,4 +1,7 @@
 <h1 align="center">
+  <br>
+  <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/2560px-Gnu-bash-logo.svg.png" alt="HTML" width="200"></a>
+  <br>
   Operating Systems
   <br>
 </h1>
