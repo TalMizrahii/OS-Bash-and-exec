@@ -9,7 +9,7 @@ position=0
 # This function display the board to the screen.
 board() {
   # This is the upper board.
-  echo " Player 1: $player1       Player 2: $player2
+  echo " Player 1: $player1         Player 2: $player2
  ---------------------------------
  |       |       #       |       |
  |       |       #       |       |"
