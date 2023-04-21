@@ -5,6 +5,9 @@
 #include <sys/wait.h>
 //#include <sys/types.h>
 
+#define MAX_SIZE 101
+#define TRUE 1
+
 // A struct to store the history of the commands and which process id ran it.
 typedef struct CommandHistory {
     char name[100];
@@ -12,7 +15,7 @@ typedef struct CommandHistory {
 } CommandHistory;
 
 // Declaring a command history array to save the last 100 commands.
-CommandHistory commandHistory[101];
+CommandHistory commandHistory[MAX_SIZE];
 // Initiating an index counter to track new open positions.
 int position = 0;
 
@@ -45,7 +48,7 @@ void displayHistory() {
  * @param args The command and arguments the user entered.
  * @param argNum The number of arguments.
  */
-void shellCommand(char *args[101], char *currentFullCommand) {
+void shellCommand(char *args[MAX_SIZE], char *currentFullCommand) {
     // Fork to create a new process to run the command.
     pid_t pid = fork();
 
@@ -94,7 +97,7 @@ void getUserInput(char *currentFullCommand) {
  * @param args The array of strings to store the result.
  * @param argNum The number of arguments.
  */
-void splitCommandAndArgs(char *currentFullCommand, char *args[101]) {
+void splitCommandAndArgs(char *currentFullCommand, char *args[MAX_SIZE]) {
     // A counter for the arguments amount.
     int argNum = 0;
     // Getting the first token.
@@ -144,18 +147,31 @@ int specialCommands(char *args[101], char *currentFullCommand) {
  * The main function of the program. running the main loop of commands.
  * @return exit value.
  */
-int main() {
+int main(int argc, char *argv[]) {
+
+    // Get the current value of the PATH environment variable.
+    char* addPathToEnv = getenv("PATH");
+    // Loop through each argument passed to the program starting from the second one.
+    int i;
+    for(i = 1; i < argc; i++) {
+        // Concatenate a colon and the current argument to the end of the PATH variable.
+        strcat(addPathToEnv, ":");
+        strcat(addPathToEnv, argv[i]);
+    }
+    // Set the new value of the PATH environment variable.
+    setenv("PATH", addPathToEnv, 1);
+
     // The main while loop of the program to run.
-    while (1) {
+    while (TRUE) {
         // Get input from the user to the currentFullCommand array.
-        char currentFullCommand[101];
+        char currentFullCommand[MAX_SIZE];
         getUserInput(currentFullCommand);
         // If the user entered exit, exit.
         if (!strcmp("exit", currentFullCommand)) {
             exit(0);
         }
         // An array of string for the arguments.
-        char *args[101] = {0};
+        char *args[MAX_SIZE] = {0};
         // Save a copy of the full command before tokenized.
         char fullCommandCpy[101];
         strcpy(fullCommandCpy, currentFullCommand);
