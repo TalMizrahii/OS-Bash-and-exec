@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check for the amount of parameters.
-if [ "$#" -lt 3 ]; then
+if [ "$#" -lt 2 ]; then
   echo "Not enough parameters"
   exit 1
 fi
@@ -20,19 +20,19 @@ word=$2
 ptf=$(realpath "$0")
 
 # delete all files with .out extension in folder
-find "$pathtoDir" -type f -name "*.out" -delete
+find "$pathtoDir" -maxdepth 1 -type f -name "*.out" -delete
 
 # Enter to the folder.
 cd "$pathtoDir" || exit 1
 
 # The regex to find the word.
-regex="\b${word}[!. ()]"
+regex="\b${word}[!. ()\n]"
 
 if [ -n "$(find . -maxdepth 1 -type f -name '*.c')" ]; then
   # Going over all .c files in the current directory.
   for file in *.c; do
     # If the regex finds a match in the file, the script will compile it.
-    if grep -q "$regex" "$file"; then
+    if grep -i -q -w $word "$file"; then
      # Get the file's name without the .c extension.
       filename="${file%.c}"
       # Compile the file to its original name but with .out suffix.
