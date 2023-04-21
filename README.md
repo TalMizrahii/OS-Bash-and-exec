@@ -1,12 +1,10 @@
 <h1 align="center">
 <br>
-  <a href="https://w7.pngwing.com/pngs/273/225/png-transparent-bash-shell-script-gnu-bourne-shell-shell.png" alt="HTML" width="200"></a>
+  <a href="https://github.com/TalMizrahii/OS-Bash-and-exec"><img src="https://tecadmin.net/tutorial/wp-content/uploads/2017/09/bash-logo.jpg" alt="HTML" width="200"></a>
   <br>
   Operating Systems
   <br>
 </h1>
-![image](https://user-images.githubusercontent.com/103560553/233603583-dcbb2f63-5f61-472a-bdee-8b76f4f47593.png)
-
 <h4 align="center">The first 3-part assignment for Operating Systems course, Bar Ilan university.
 
 ## Part 1 - Bash: gcc-find
