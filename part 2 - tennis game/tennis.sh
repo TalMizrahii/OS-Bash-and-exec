@@ -56,8 +56,11 @@ playerPick() {
   choice1=0
   while [[ $flag1 -eq 1 ]]; do
     # Asking player 1 for his choice and setting it to $choice1.
-    read -s -p "PLAYER 1 PICK A NUMBER: " choice1
-    echo -e
+    echo -n "PLAYER 1 PICK A NUMBER: "
+    # Reading player 1's choice and setting it to $choice1.
+    read -s choice1
+    # New line.
+    echo
     # Checking if the choice is a number.
     if [[ ! $choice1 =~ ^[0-9]+$ ]]; then
       echo "NOT A VALID MOVE !"
@@ -80,9 +83,12 @@ playerPick() {
   # Setting the choice to 0.
   choice2=0
   while [[ $flag2 -eq 1 ]]; do
-    # Asking player 2 for his choice and setting it to $choice2.
-    read -s -p "PLAYER 2 PICK A NUMBER: " choice2
-    echo -e
+    # Asking player 1 for his choice and setting it to $choice1.
+    echo -n "PLAYER 2 PICK A NUMBER: "
+    # Reading player 1's choice and setting it to $choice1.
+    read -s choice2
+    # New line.
+    echo
     # Checking if the choice is a number.
     if [[ ! $choice2 =~ ^[0-9]+$ ]]; then
       echo "NOT A VALID MOVE !"
