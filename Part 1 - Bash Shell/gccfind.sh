@@ -14,19 +14,21 @@ else
   pathtoDir=$(realpath "$1")
 fi
 
+# Check if directory exists
+if [ ! -d "$pathtoDir" ]; then
+  exit 1
+fi
+
 # Create variables from the program arguments.
 word=$2
 #Save the location of the program.
 ptf=$(realpath "$0")
 
 # delete all files with .out extension in folder
-find "$pathtoDir" -maxdepth 1 -type f -name "*.out" -delete
+find . -type f -name "*.out" -delete
 
 # Enter to the folder.
-cd "$pathtoDir" || exit 1
-
-# The regex to find the word.
-regex="\b${word}[!. ()\n]"
+cd "$pathtoDir"
 
 if [ -n "$(find . -maxdepth 1 -type f -name '*.c')" ]; then
   # Going over all .c files in the current directory.
