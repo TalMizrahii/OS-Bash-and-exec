@@ -1,4 +1,5 @@
 #!/bin/bash
+#Tal Mizrahi 206960890
 
 # Check for the amount of parameters.
 if [ "$#" -lt 2 ]; then
@@ -24,11 +25,19 @@ word=$2
 #Save the location of the program.
 ptf=$(realpath "$0")
 
-# delete all files with .out extension in folder
-find . -type f -name "*.out" -delete
 
 # Enter to the folder.
-cd "$pathtoDir"
+cd "$pathtoDir" || exit
+
+# Delete all files with .out extension in folder.
+#find . -type f -name "*.out" -delete
+
+if [ "$3" == "-r" ]; then
+  find . -type f -name "*.out" -delete
+else
+  find . -maxdepth 1 -type f -name "*.out" -delete
+fi
+
 
 if [ -n "$(find . -maxdepth 1 -type f -name '*.c')" ]; then
   # Going over all .c files in the current directory.
