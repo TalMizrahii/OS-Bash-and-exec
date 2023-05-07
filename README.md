@@ -5,7 +5,7 @@
   Operating Systems
   <br>
 </h1>
-<h4 align="center">The first 3-part assignment for Operating Systems course, Bar Ilan university.
+<h4 align="center">The first 3-part assignment for Operating Systems course, Bar Ilan University.
 
 ## Part 1 - Bash: gcc-find
 ### About
