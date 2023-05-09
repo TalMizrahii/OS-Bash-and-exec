@@ -42,6 +42,63 @@ The code contains several functions, each responsible for a different task. Here
  * setScore() - This function sets the position of the token based on the result of the round. If player 1 wins, the token moves to the right, and if player 2 wins, the token moves to the left.
  * presentPicks() - This function displays the choices made by each player in the current round.
  * goldenTicket() - This function checks if any player has won the game by reaching a score of 0 or moving the token to the far right or left of the board.
+  
+### Gameplay Example
+
+```
+ Player 1: 50         Player 2: 50 
+ --------------------------------- 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ |       |       O       |       | 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ --------------------------------- 
+PLAYER 1 PICK A NUMBER: 30
+PLAYER 2 PICK A NUMBER: 20
+
+       Player 1 played: 30
+       Player 2 played: 20
+
+ Player 1: 20         Player 2: 30 
+ --------------------------------- 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ |       |       #   O   |       | 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ --------------------------------- 
+PLAYER 1 PICK A NUMBER: 20
+PLAYER 2 PICK A NUMBER: 30
+
+       Player 1 played: 20
+       Player 2 played: 30
+
+ Player 1: 0         Player 2: 20 
+ --------------------------------- 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ |       |       #       |   O   | 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ --------------------------------- 
+PLAYER 1 PICK A NUMBER: 0
+PLAYER 2 PICK A NUMBER: 20
+
+       Player 1 played: 0
+       Player 2 played: 20
+
+ Player 1: 0         Player 2: 0 
+ --------------------------------- 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ |       |       #       |       | 
+ --------------------------------- 
+
+Player 2 Wins!
+```
 
 ### Execution
 
